@@ -3,14 +3,44 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/holo_orange_light">
+    android:background="@android:color/white">
 
     <TextView
+        android:id="@+id/todoEx"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="List Fragment"
-        android:textSize="30sp"
+        android:textSize="20sp"
+        android:textColor="@color/colorTitle"
         android:layout_centerInParent="true"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
         />
+
+    <Button
+        android:id="@+id/todoBtn"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:text="Go to ToDo List"
+        android:textStyle="bold"
+        android:textAllCaps="true"
+        android:layout_below="@+id/todoEx"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:textColor="@android:color/white"
+        android:background="@color/colorTitle"
+
+        />
+
+    <ImageView
+        android:id="@+id/todoAssist"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/owl_assistant"
+        android:layout_above="@+id/todoEx"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+
+        />
+
 
 </RelativeLayout>

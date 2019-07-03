@@ -43,7 +43,7 @@ public class PomodoroActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_pomo);
 
         // initializing all the instance variables
 
@@ -71,24 +71,10 @@ public class PomodoroActivity extends AppCompatActivity {
         progressCircle = findViewById(R.id.progress);
         updateCountDownText();
 
-        // setting up the transition through the button on timer page
-
-        transitionButton = (Button) findViewById(R.id.transitionButton);
-        transitionButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                // Creates a new intent that will ultimately connect to the second activity
-                openCalendar();
-            }
-        });
 
     }
 
-    public void openCalendar() {
-        Intent intent = new Intent(this, pomodoroFragment.class);
-        startActivity(intent);
-    }
+
     public void openBreak() {
         Intent intent = new Intent(this, BreakActivity.class);
         startActivity(intent);

@@ -1,9 +1,72 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".BreakActivity">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <ProgressBar
+        android:id="@+id/breakProgress"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="270dp"
+        android:layout_height="270dp"
+        android:layout_centerInParent="true"
+        android:background="@drawable/drawable_black_circle"
+        android:indeterminate="false"
+        android:max="100"
+        android:progress="200"
+        android:progressDrawable="@drawable/drawable_orange_circle"
+        android:rotation="-90"
+        />
+
+
+    <TextView
+        android:id="@+id/break_countdown"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:text="00:00"
+        android:textColor="@android:color/black"
+        android:textSize="60sp"
+        />
+
+    <Button
+        android:id="@+id/start_break_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/countdown_text"
+        android:layout_centerHorizontal="true"
+        android:text="start"
+        />
+
+    <TextView
+        android:id="@+id/break_explain"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/progress"
+        android:layout_centerInParent="true"
+        android:layout_centerVertical="true"
+        android:layout_marginBottom="41dp"
+        android:textAllCaps="true"
+        android:text="The Pomodoro Technique"
+        android:gravity="center"
+        android:textColor="@color/colorTitle"
+        android:textSize="40sp"
+        android:textStyle="bold"
+        />
+
+    <Button
+        android:id="@+id/games_transitionButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/break_explain"
+        android:layout_marginTop="20dp"
+        android:layout_centerHorizontal="true"
+        android:textAllCaps="true"
+        android:textColor="@android:color/darker_gray"
+        android:text="Game Options"
+        />
+
+</RelativeLayout>

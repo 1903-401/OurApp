@@ -1,4 +1,4 @@
 package com.example.tigerapp;
 
-public class Timer {
+public class PomodoroFirst {
 }

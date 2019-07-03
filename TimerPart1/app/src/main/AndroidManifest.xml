@@ -9,18 +9,29 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".IntroActivity"></activity>
+        <activity android:name=".GameChoicesActivity"></activity>
+        <activity android:name=".ListTransitionActivity" />
         <activity
-            android:name=".HomeActivity"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:name=".ItemActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".DashboardActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".TimerActivity" />
+        <activity android:name=".IntroActivity" />
+        <activity
+            android:name=".HomeActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".BreakActivity" />
         <activity android:name=".CalendarActivity" />
-        <activity android:name=".PomodoroActivity"></activity>
+        <activity android:name=".PomodoroActivity" />
     </application>
 
 </manifest>

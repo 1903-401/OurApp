@@ -6,11 +6,40 @@
     android:background="@android:color/white">
 
     <TextView
+        android:id="@+id/timerEx"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Timer fragment"
-        android:textSize="30sp"
+        android:textSize="20sp"
+        android:textColor="@color/colorTitle"
         android:layout_centerInParent="true"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        />
+
+    <Button
+        android:id="@+id/timerBtn"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:text="Go to Timer"
+        android:textStyle="bold"
+        android:textAllCaps="true"
+        android:layout_below="@+id/timerEx"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:textColor="@android:color/white"
+        android:background="@color/colorTitle"
+
+        />
+
+    <ImageView
+        android:id="@+id/timer_assist"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@mipmap/owl_assistant"
+        android:layout_above="@+id/timerEx"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+
         />
 
 </RelativeLayout>
