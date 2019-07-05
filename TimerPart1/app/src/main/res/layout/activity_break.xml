@@ -36,8 +36,10 @@
         android:id="@+id/start_break_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/countdown_text"
+        android:layout_below="@+id/break_countdown"
         android:layout_centerHorizontal="true"
+        android:background="@color/colorTitle"
+        android:textColor="@android:color/white"
         android:text="start"
         />
 
@@ -45,12 +47,12 @@
         android:id="@+id/break_explain"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/progress"
+        android:layout_above="@+id/breakProgress"
         android:layout_centerInParent="true"
         android:layout_centerVertical="true"
-        android:layout_marginBottom="41dp"
+        android:layout_marginBottom="20dp"
         android:textAllCaps="true"
-        android:text="The Pomodoro Technique"
+        android:text="Break"
         android:gravity="center"
         android:textColor="@color/colorTitle"
         android:textSize="40sp"
@@ -59,13 +61,14 @@
 
     <Button
         android:id="@+id/games_transitionButton"
-        android:layout_width="wrap_content"
+        android:layout_width="140dp"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/break_explain"
+        android:layout_below="@+id/breakProgress"
         android:layout_marginTop="20dp"
         android:layout_centerHorizontal="true"
         android:textAllCaps="true"
-        android:textColor="@android:color/darker_gray"
+        android:textColor="@android:color/white"
+        android:background="@color/colorTitle"
         android:text="Game Options"
         />
 

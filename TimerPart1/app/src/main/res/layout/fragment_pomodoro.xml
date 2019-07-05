@@ -13,9 +13,12 @@
         android:layout_height="wrap_content"
         android:textSize="20sp"
         android:textColor="@color/colorTitle"
+        android:layout_centerHorizontal="true"
         android:layout_centerInParent="true"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
+        android:layout_marginLeft="35dp"
+        android:layout_marginRight="35dp"
+        android:layout_marginBottom="20dp"
+        android:layout_marginTop="10dp"
         />
 
     <Button

@@ -11,4 +11,6 @@
     <color name="green">@android:color/holo_green_dark</color>
     <color name="orange">#FF9800</color>
     <color name="black">#000000</color>
+    <color name="lighterBlue">#359BD8</color>
+
 </resources>

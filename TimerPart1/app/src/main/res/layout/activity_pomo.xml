@@ -37,6 +37,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/countdown_text"
+        android:background="@color/colorTitle"
         android:layout_centerHorizontal="true"
         android:text="start"
         />
@@ -49,6 +50,7 @@
         android:text="RESET"
         android:visibility="invisible"
         tools:visibility="invisible"
+        android:background="@color/colorTitle"
         android:layout_centerHorizontal="true"
         />
 
