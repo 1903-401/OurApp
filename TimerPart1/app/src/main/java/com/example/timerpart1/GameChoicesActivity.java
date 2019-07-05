@@ -2,7 +2,9 @@ package com.example.timerpart1;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 
 public class GameChoicesActivity extends AppCompatActivity {
@@ -17,9 +19,21 @@ public class GameChoicesActivity extends AppCompatActivity {
         setContentView(R.layout.activity_game_choices);
 
         one = findViewById(R.id.games_one);
-        two = findViewById(R.id.games_one);
-        three = findViewById(R.id.games_one);
+        two = findViewById(R.id.games_two);
+        three = findViewById(R.id.games_three);
 
+        one.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openOne();
+            }
+        });
 
     }
+
+    public void openOne() {
+        Intent intent = new Intent(this, CatchStartActivity.class);
+        startActivity(intent);
+    }
+
 }

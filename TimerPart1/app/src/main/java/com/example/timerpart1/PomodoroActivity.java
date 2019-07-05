@@ -26,7 +26,7 @@ public class PomodoroActivity extends AppCompatActivity {
     private boolean timerRunning;
     private TextView explanation_text;
 
-    private long SET_TIME = 60000;
+    private long SET_TIME = 10000;
     private long timeLeftInMilliseconds = SET_TIME; // 1,500,000 = 25 minutes
 
     // for the progress bar
