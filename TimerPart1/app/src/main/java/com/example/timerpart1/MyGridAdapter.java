@@ -59,10 +59,12 @@ public class MyGridAdapter extends ArrayAdapter {
         }
 
         if (displayMonth == currentMonth && displayYear == currentYear) {
-            view.setBackgroundColor(ContextCompat.getColor(getContext(), R.color.orange));
+            view.setBackgroundColor(ContextCompat.getColor(getContext(), R.color.transparent));
         }
         else {
-            view.setBackgroundColor(ContextCompat.getColor(getContext(), R.color.black));
+            view.setVisibility(View.INVISIBLE);
+
+
         }
 
         TextView Day_Number = view.findViewById(R.id.calendar_day);

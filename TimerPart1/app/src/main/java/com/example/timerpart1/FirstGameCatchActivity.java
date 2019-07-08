@@ -3,8 +3,10 @@ package com.example.timerpart1;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.graphics.Point;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.os.Handler;
 import android.view.Display;
 import android.view.KeyEvent;
@@ -15,6 +17,7 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.util.Locale;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -41,6 +44,7 @@ public class FirstGameCatchActivity extends AppCompatActivity {
     private int pinkY;
     private int blackX;
     private int blackY;
+
 
 
     // score
@@ -71,6 +75,7 @@ public class FirstGameCatchActivity extends AppCompatActivity {
         orange = (ImageView) findViewById(R.id.orange);
         pink = (ImageView) findViewById(R.id.pink);
         black = (ImageView) findViewById(R.id.black);
+
 
         // get screen size
         WindowManager wm = getWindowManager();
@@ -215,6 +220,7 @@ public class FirstGameCatchActivity extends AppCompatActivity {
             startLabel.setVisibility(View.INVISIBLE);
             scoreLabel.setVisibility(View.VISIBLE);
 
+
             timer.schedule(new TimerTask() {
                 @Override
                 public void run() {
@@ -247,7 +253,6 @@ public class FirstGameCatchActivity extends AppCompatActivity {
         }
         return super.dispatchKeyEvent(event);
     }
-
 
 
 

@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@drawable/calendar_background"
     android:id="@+id/activity_custom_calendar"
     >
 
@@ -14,7 +15,7 @@
         android:orientation="horizontal"
         android:paddingTop="8dp"
         android:paddingBottom="8dp"
-        android:background="@android:color/holo_orange_dark">
+     >
 
         <ImageButton
             android:id="@+id/previousBtn"
@@ -31,7 +32,7 @@
             android:gravity="center"
             android:layout_marginTop="4dp"
             android:text="CurrentDate"
-            android:textColor="@android:color/white"
+            android:textColor="@color/colorTitle"
             android:textStyle="bold"
             android:textSize="18sp"
             android:layout_weight="3"
@@ -53,80 +54,86 @@
         android:orientation="horizontal"
         android:paddingTop="4dp"
         android:paddingBottom="4dp"
-        android:background="@color/colorPrimaryDark"
         >
 
         <TextView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="30dp"
             android:gravity="center"
             android:text="Sun"
-            android:background="@android:color/holo_blue_dark"
+            android:background="@color/monday"
             android:layout_marginTop="4dp"
             android:layout_weight="1"
             android:textStyle="bold"
+            android:textColor="@color/fontColor"
             />
         <TextView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="30dp"
             android:gravity="center"
             android:text="Mon"
-            android:background="@android:color/holo_orange_light"
+            android:background="@color/tuesday"
             android:layout_marginTop="4dp"
             android:layout_weight="1"
             android:textStyle="bold"
+            android:textColor="@color/fontColor"
             />
         <TextView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="30dp"
             android:gravity="center"
             android:text="Tue"
-            android:background="@android:color/holo_green_light"
+            android:background="@color/wed"
             android:layout_marginTop="4dp"
             android:layout_weight="1"
             android:textStyle="bold"
+            android:textColor="@color/fontColor"
             />
         <TextView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="30dp"
             android:gravity="center"
             android:text="Wed"
-            android:background="@android:color/holo_red_light"
+            android:background="@color/thu"
             android:layout_marginTop="4dp"
             android:layout_weight="1"
             android:textStyle="bold"
+            android:textColor="@color/fontColor"
             />
         <TextView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="30dp"
             android:gravity="center"
             android:text="Thu"
-            android:background="@android:color/holo_purple"
+            android:background="@color/fri"
             android:layout_marginTop="4dp"
             android:layout_weight="1"
             android:textStyle="bold"
+            android:textColor="@color/fontColor"
             />
 
         <TextView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="30dp"
             android:gravity="center"
             android:text="Fri"
-            android:background="@android:color/white"
+            android:background="@color/sat"
             android:layout_marginTop="4dp"
             android:layout_weight="1"
             android:textStyle="bold"
+            android:textColor="@color/fontColor"
             />
 
         <TextView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="30dp"
             android:gravity="center"
             android:text="Sat"
-            android:background="@android:color/darker_gray"
+            android:background="@color/sun"
             android:layout_marginTop="4dp"
             android:layout_weight="1"
             android:textStyle="bold"
+            android:textColor="@color/fontColor"
             />
 
     </LinearLayout>

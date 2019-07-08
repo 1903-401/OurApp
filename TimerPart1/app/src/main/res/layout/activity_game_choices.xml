@@ -4,40 +4,38 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/break_background"
     tools:context=".GameChoicesActivity">
 
     <ImageView
         android:id="@+id/gameOwl"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="140dp"
+        android:layout_height="140dp"
         android:src="@mipmap/owl_assistant"
-        android:layout_above="@+id/games_three"
-        android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
+        android:layout_above="@+id/games_one"
         android:layout_marginBottom="20dp"
-
         />
 
     <Button
         android:id="@+id/games_one"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:layout_marginTop="20dp"
+        android:layout_above="@+id/games_two"
         android:layout_marginBottom="20dp"
+        android:layout_centerHorizontal="true"
         android:textAllCaps="true"
         android:textColor="@android:color/darker_gray"
         android:background="@color/colorTitle"
-        android:text="TBD"
+        android:text="Catch The Ball"
         />
 
     <Button
         android:id="@+id/games_two"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/games_one"
-        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="20dp"
+        android:layout_centerInParent="true"
         android:textAllCaps="true"
         android:textColor="@android:color/darker_gray"
         android:background="@color/colorTitle"
@@ -48,7 +46,7 @@
         android:id="@+id/games_three"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/games_one"
+        android:layout_below="@+id/games_two"
         android:layout_centerHorizontal="true"
         android:textAllCaps="true"
         android:textColor="@android:color/darker_gray"

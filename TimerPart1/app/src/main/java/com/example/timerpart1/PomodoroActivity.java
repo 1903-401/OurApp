@@ -50,8 +50,6 @@ public class PomodoroActivity extends AppCompatActivity {
         countdownText = findViewById(R.id.countdown_text);
         countdownButton = findViewById(R.id.start_button);
         buttonReset = findViewById(R.id.button_reset);
-        explanation_text = findViewById(R.id.explanation);
-
 
         // setting up what the buttons should do
         countdownButton.setOnClickListener(new View.OnClickListener() {

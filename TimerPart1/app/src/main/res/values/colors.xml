@@ -11,6 +11,17 @@
     <color name="green">@android:color/holo_green_dark</color>
     <color name="orange">#FF9800</color>
     <color name="black">#000000</color>
-    <color name="lighterBlue">#359BD8</color>
+    <color name="lighterBlue">#CEE2FF</color>
+    <color name="fontColor">#F3E8C1</color>
+    <color name="niceGreen">#55E05B</color>
+    <color name="transparent">#00555555</color>
+    <color name="light">#58C4F5</color>
+    <color name="monday">#00BCD4</color>
+    <color name="tuesday">#03A9F4</color>
+    <color name="wed">#2196F3</color>
+    <color name="thu">#1B86B9</color>
+    <color name="fri">#136181</color>
+    <color name="sat">#0F658A</color>
+    <color name="sun">#0A445C</color>
 
 </resources>

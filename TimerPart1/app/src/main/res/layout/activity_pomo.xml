@@ -17,9 +17,7 @@
         android:max="100"
         android:progress="200"
         android:progressDrawable="@drawable/drawable_orange_circle"
-        android:rotation="-90"
-        />
-
+        android:rotation="-90" />
 
     <TextView
         android:id="@+id/countdown_text"
@@ -61,7 +59,8 @@
         android:layout_above="@+id/progress"
         android:layout_centerInParent="true"
         android:layout_centerVertical="true"
-        android:layout_marginBottom="41dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginBottom="25dp"
         android:textAllCaps="true"
         android:text="The Pomodoro Technique"
         android:gravity="center"
@@ -69,6 +68,8 @@
         android:textSize="40sp"
         android:textStyle="bold"
         />
+
+
 
 
 </RelativeLayout>

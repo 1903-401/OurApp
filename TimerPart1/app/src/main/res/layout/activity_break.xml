@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/break_background"
     tools:context=".BreakActivity">
 
     <ProgressBar
@@ -54,7 +55,7 @@
         android:textAllCaps="true"
         android:text="Break"
         android:gravity="center"
-        android:textColor="@color/colorTitle"
+        android:textColor="@color/lighterBlue"
         android:textSize="40sp"
         android:textStyle="bold"
         />
