@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/timer_frame"
     tools:context=".TimerActivity">
 
     <EditText
@@ -19,6 +20,7 @@
 
     <Button
         android:id="@+id/button_set"
+        android:background="@color/fontColor"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignTop="@+id/edit_text_input"
@@ -40,6 +42,7 @@
 
     <Button
         android:id="@+id/button_start_pause"
+        android:background="@color/fontColor"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/text_view_countdown"
@@ -48,6 +51,7 @@
 
     <Button
         android:id="@+id/button_reset"
+        android:background="@color/fontColor"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/text_view_countdown"
@@ -60,19 +64,6 @@
         tools:visibility="invisible"
 
         />
-
-    <Button
-        android:id="@+id/timerTransition"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/button_reset"
-        android:layout_marginTop="10dp"
-        android:layout_centerHorizontal="true"
-        android:textAllCaps="true"
-        android:textColor="@android:color/darker_gray"
-        android:text="Go back to Assistant"
-        />
-
 
 
 </RelativeLayout>

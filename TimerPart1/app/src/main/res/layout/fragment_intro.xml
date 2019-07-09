@@ -4,17 +4,33 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/white"
-    tools:context="calendarFragment"
+    android:background="@drawable/background"
+    tools:context="introFragment"
     >
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="30sp"
-        android:text="Introduction Fragment"
-        android:layout_centerInParent="true"
+    <ImageView
+        android:id="@+id/intro_assist"
+        android:layout_width="140dp"
+        android:layout_height="140dp"
+        android:layout_marginTop="80dp"
+        android:src="@mipmap/owl_assistant"
+        android:layout_above="@+id/timerEx"
+        android:layout_centerHorizontal="true"
         />
+
+    <TextView
+        android:id="@+id/introEx"
+        android:layout_width="wrap_content"
+        android:layout_height="505dp"
+        android:layout_alignTop="@+id/intro_assist"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="150dp"
+        android:layout_marginRight="25dp"
+        android:textColor="@color/fontColor"
+        android:textSize="20sp" />
+
+
 
 
 

@@ -108,21 +108,7 @@ public class TimerActivity extends AppCompatActivity {
 
         // setting up the transition through the button on timer page
 
-        transitionButton = (Button) findViewById(R.id.timerTransition);
-        transitionButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
 
-                // Creates a new intent that will ultimately connect to the second activity
-                openTimer();
-            }
-        });
-
-    }
-
-    public void openTimer() {
-        Intent intent = new Intent(this, timerFragment.class);
-        startActivity(intent);
     }
 
     // will start the time using the input data from the user
@@ -152,6 +138,7 @@ public class TimerActivity extends AppCompatActivity {
 
                 // conditions for when the timer is finished
                 mTimeRunning = false;
+                openBreak();
                 updateButtons();
 
 
@@ -164,6 +151,11 @@ public class TimerActivity extends AppCompatActivity {
         mTimeRunning = true;
         updateButtons();
 
+    }
+
+    public void openBreak() {
+        Intent intent = new Intent(this, BreakActivity.class);
+        startActivity(intent);
     }
 
     // called when someone clicks on start/pause button and the timer is

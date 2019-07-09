@@ -8,6 +8,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 public class CatchResultActivity extends AppCompatActivity {
@@ -19,6 +20,17 @@ public class CatchResultActivity extends AppCompatActivity {
 
         TextView scoreLabel = (TextView) findViewById(R.id.scoreLabel);
         TextView highScoreLabel = (TextView) findViewById(R.id.highScoreLabel);
+
+
+        // transition
+        Button back = findViewById(R.id.back);
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), HomeActivity.class);
+                startActivity(intent);
+            }
+        });
 
         int score = getIntent().getIntExtra("SCORE", 0);
         scoreLabel.setText(score + "");
