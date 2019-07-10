@@ -30,7 +30,7 @@ public class timerFragment extends Fragment {
         btnOpen.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent in = new Intent(getActivity(), TimerActivity.class);
+                Intent in = new Intent(getActivity(), TimerTransitionActivity.class);
                 startActivity(in);
             }
         });

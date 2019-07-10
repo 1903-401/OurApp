@@ -9,11 +9,16 @@
         android:roundIcon="@mipmap/official_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".CatchResultActivity"></activity>
+        <activity android:name=".StartMaze"></activity>
+        <activity android:name=".Second_Game_Main" />
+        <activity android:name=".CatchResultActivity" />
         <activity android:name=".CatchStartActivity" />
         <activity android:name=".FirstGameCatchActivity" />
         <activity android:name=".GameChoicesActivity" />
         <activity android:name=".ListTransitionActivity" />
+        <activity android:name=".TimerTransitionActivity"/>
+        <activity android:name=".PomoTransitionActivity"/>
+        <activity android:name=".CalendarTransitionActivity"/>
         <activity
             android:name=".ItemActivity"
             android:theme="@style/AppTheme.NoActionBar" />

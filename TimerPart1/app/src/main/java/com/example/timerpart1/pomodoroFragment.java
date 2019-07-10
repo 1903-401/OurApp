@@ -32,7 +32,7 @@ public class pomodoroFragment extends Fragment {
         btnOpen.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent in = new Intent(getActivity(), PomodoroActivity.class);
+                Intent in = new Intent(getActivity(), PomoTransitionActivity.class);
                 startActivity(in);
             }
         });

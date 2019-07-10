@@ -27,7 +27,7 @@ public class calendarFragment extends Fragment {
         btnOpen.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent in = new Intent(getActivity(), CalendarActivity.class);
+                Intent in = new Intent(getActivity(), CalendarTransitionActivity.class);
                 startActivity(in);
             }
         });

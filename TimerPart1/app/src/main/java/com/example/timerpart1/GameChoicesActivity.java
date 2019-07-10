@@ -28,11 +28,22 @@ public class GameChoicesActivity extends AppCompatActivity {
                 openOne();
             }
         });
+        two.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openTwo();
+            }
+        });
 
     }
 
     public void openOne() {
         Intent intent = new Intent(this, CatchStartActivity.class);
+        startActivity(intent);
+    }
+
+    public void openTwo() {
+        Intent intent = new Intent(this, StartMaze.class);
         startActivity(intent);
     }
 
