@@ -7,16 +7,32 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import java.util.Timer;
+import java.util.TimerTask;
+
 public class GameChoicesActivity extends AppCompatActivity {
 
     private Button one;
     private Button two;
     private Button three;
+    Timer timer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game_choices);
+
+        // timer for break
+        timer = new Timer();
+        timer.schedule(new TimerTask() {
+            @Override
+            public void run() {
+                Intent intent = new Intent(GameChoicesActivity.this, PomodoroActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        }, 5000);
+
 
         one = findViewById(R.id.games_one);
         two = findViewById(R.id.games_two);
