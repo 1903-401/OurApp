@@ -2,10 +2,12 @@ package com.example.timerpart1;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import java.util.Timer;
 import java.util.TimerTask;
@@ -27,7 +29,8 @@ public class GameChoicesActivity extends AppCompatActivity {
         timer.schedule(new TimerTask() {
             @Override
             public void run() {
-                Intent intent = new Intent(GameChoicesActivity.this, PomodoroActivity.class);
+                Intent intent = new Intent(GameChoicesActivity.this,
+                        BreakOverActivity.class);
                 startActivity(intent);
                 finish();
             }
@@ -50,6 +53,12 @@ public class GameChoicesActivity extends AppCompatActivity {
                 openTwo();
             }
         });
+        three.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openThree();
+            }
+        });
 
     }
 
@@ -60,6 +69,11 @@ public class GameChoicesActivity extends AppCompatActivity {
 
     public void openTwo() {
         Intent intent = new Intent(this, StartMaze.class);
+        startActivity(intent);
+    }
+
+    public void openThree() {
+        Intent intent = new Intent(this, Version2GameActivity.class);
         startActivity(intent);
     }
 

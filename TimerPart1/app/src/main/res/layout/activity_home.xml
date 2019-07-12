@@ -10,32 +10,41 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@drawable/home_background"
+        >
 
         <TextView
             android:id="@+id/welcome"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="130dp"
+            android:fontFamily="@font/berkshire_swash"
             android:gravity="center"
-            android:textColor="@color/colorTitle"
-            android:textSize="50sp"
-            android:textStyle="bold"
-            android:text="Title TBD"
-            android:textAllCaps="true"
+            android:text="StudyOwl"
+            android:layout_marginLeft="-50dp"
             android:layout_marginBottom="20dp"
-            android:layout_marginTop="100dp"
+            android:textColor="@color/colorTitle"
+            android:textSize="60sp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/littleOwl"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@mipmap/owl_assistant"
+            android:layout_toRightOf="@+id/welcome"
+
             />
 
         <ImageView
             android:id="@+id/logo"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="300dp"
+            android:layout_height="300dp"
             android:src="@drawable/logo"
             android:layout_below="@+id/welcome"
-            android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true"
+            android:layout_centerInParent="true"
             android:layout_marginBottom="20dp"
-
             />
 
 
@@ -57,6 +66,7 @@
 
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/nav_view"
+        android:background="@drawable/navigation_background"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_gravity="start"

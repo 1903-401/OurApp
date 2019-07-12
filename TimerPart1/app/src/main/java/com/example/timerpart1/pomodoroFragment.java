@@ -25,6 +25,9 @@ public class pomodoroFragment extends Fragment {
         TextView ex = view.findViewById(R.id.pomoEx);
         ex.setText("Welcome! This Timer utilizes the Pomodoro Technique." +
                 " It allots 25 minutes to completing a task, followed by a 5 minute break period." +
+                " During the break, you will have access to some fun games, which are only" +
+                " available for 15 minute periods. we recommend doing taking the extended fifteen" +
+                " minute break every fourth time, but the choice is up to you." +
                 " Would you like me to redirect you to the Pomodoro Timer?");
 
 

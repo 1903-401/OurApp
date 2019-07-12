@@ -69,11 +69,24 @@
     </TableLayout>
 
     <Button
+        android:id="@+id/startCatch"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="START"
         android:layout_marginTop="60dp"
         android:onClick="startGame"/>
+
+    <Button
+        android:id="@+id/leaveCatch1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Back"
+        android:textColor="#00BCD4"
+        android:onClick="back"
+        android:textSize="14sp"
+        android:layout_below="@+id/startCatch"
+        android:layout_centerHorizontal="true"/>
 
 
 </LinearLayout>

@@ -12,6 +12,7 @@ import android.widget.TextView;
 
 import androidx.core.content.ContextCompat;
 
+import java.lang.reflect.Array;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -26,7 +27,6 @@ public class MyGridAdapter extends ArrayAdapter {
     Calendar currentDate;
     List<Events> events;
     LayoutInflater inflater;
-    Button delete;
 
     public MyGridAdapter(Context context, List<Date> dates, Calendar currentDate, List<Events> events) {
         super(context, R.layout.single_cell_layout);
@@ -69,7 +69,7 @@ public class MyGridAdapter extends ArrayAdapter {
 
         TextView Day_Number = view.findViewById(R.id.calendar_day);
         TextView EventNumber = view.findViewById(R.id.events_id);
-        delete = view.findViewById(R.id.deleteButton);
+
         Day_Number.setText(String.valueOf(DayNo));
         Calendar eventCalendar = Calendar.getInstance();
         final ArrayList<String> arrayList = new ArrayList<>();
@@ -82,10 +82,12 @@ public class MyGridAdapter extends ArrayAdapter {
                 EventNumber.setText(arrayList.size() + " Events");
             }
 
+
         }
 
         return view;
     }
+
 
     private Date ConvertStringToDate(String eventDate) {
         SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd", Locale.ENGLISH);

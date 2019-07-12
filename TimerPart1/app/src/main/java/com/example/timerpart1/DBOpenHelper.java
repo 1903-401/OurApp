@@ -9,9 +9,9 @@ import android.database.sqlite.SQLiteOpenHelper;
 public class DBOpenHelper extends SQLiteOpenHelper {
 
     private final static String CREATE_EVENTS_TABLE = "create table " + DBStructure.EVENT_TABLE_NAME
-            + "(ID INTEGER PRIMARY KEY AUTOINCREMENT, " + DBStructure.EVENT + " TEXT, "
+            + " (" + DBStructure.KEY_ID + " ID INTEGER PRIMARY KEY AUTOINCREMENT, " + DBStructure.EVENT + " TEXT, "
             + DBStructure.TIME + " TEXT, " + DBStructure.DATE + " TEXT, " + DBStructure.MONTH
-            + " TEXT, " + DBStructure.YEAR + " TEXT)";
+            + " TEXT, " + DBStructure.YEAR + " TEXT )";
 
     private static final String DROP_EVENTS_TABLE = "DROP TABLE IF EXISTS " + DBStructure.EVENT_TABLE_NAME;
 
@@ -42,6 +42,12 @@ public class DBOpenHelper extends SQLiteOpenHelper {
 
 
     }
+
+    public void DeleteEvent(String event, String time, String date, String month, String year, SQLiteDatabase database){
+        database.delete(DBStructure.EVENT_TABLE_NAME, "DBStructure.KEY_ID + =?",
+                new String[] {event, date});
+    }
+
 
     public Cursor ReadEvents(String date, SQLiteDatabase database) {
         String [] Projections = {DBStructure.EVENT, DBStructure.TIME, DBStructure.DATE,
