@@ -37,7 +37,7 @@ public class CustomCalendarView extends LinearLayout {
 
     // initializing all the variables
 
-    ImageButton nextButton, previousButton;
+    ImageButton nextButton, previousButton; // delete    Button
     TextView CurrentDate;
     GridView gridView;
     private static final int MAX_CALENDAR_DAYS = 42;
@@ -93,6 +93,8 @@ public class CustomCalendarView extends LinearLayout {
                 final TextView EventTime = addView.findViewById(R.id.eventTime);
                 ImageButton SetTime = addView.findViewById(R.id.setEventTime);
                 Button AddEvent = addView.findViewById(R.id.addEventBtn);
+
+
                 SetTime.setOnClickListener(new OnClickListener() {
                     @Override
                     public void onClick(View view) {
@@ -134,6 +136,11 @@ public class CustomCalendarView extends LinearLayout {
                 builder.setView(addView);
                 alertDialog = builder.create();
                 alertDialog.show();
+
+
+
+
+
             }
         });
 

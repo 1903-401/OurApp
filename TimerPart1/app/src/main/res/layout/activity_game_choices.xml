@@ -39,7 +39,7 @@
         android:textAllCaps="true"
         android:textColor="@android:color/black"
         android:background="@color/light"
-        android:text="TBD"
+        android:text="Maze"
         />
 
     <Button

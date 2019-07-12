@@ -2,6 +2,7 @@ package com.example.timerpart1;
 
 import android.content.Context;
 import android.graphics.Color;
+import android.os.Bundle;
 import android.util.EventLog;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -26,7 +27,9 @@ public class MyGridAdapter extends ArrayAdapter {
     Calendar currentDate;
     List<Events> events;
     LayoutInflater inflater;
-    Button delete;
+    Button delete; // was not a comment
+
+
 
     public MyGridAdapter(Context context, List<Date> dates, Calendar currentDate, List<Events> events) {
         super(context, R.layout.single_cell_layout);
@@ -69,7 +72,21 @@ public class MyGridAdapter extends ArrayAdapter {
 
         TextView Day_Number = view.findViewById(R.id.calendar_day);
         TextView EventNumber = view.findViewById(R.id.events_id);
-        delete = view.findViewById(R.id.deleteButton);
+
+        // delete button
+
+//        final Button button = view.findViewById(R.id.deleteButton);
+//         delete = view.findViewById(R.id.deleteButton);
+//        button.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//
+//
+//            }
+//        });
+         //code ends here
+
+
         Day_Number.setText(String.valueOf(DayNo));
         Calendar eventCalendar = Calendar.getInstance();
         final ArrayList<String> arrayList = new ArrayList<>();
@@ -114,6 +131,9 @@ public class MyGridAdapter extends ArrayAdapter {
     public Object getItem(int position) {
         return dates.get(position);
     }
+
+
+
 }
 
 
