@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/break_background"
+    tools:context=".Break2Activity">
+
+    <TextView
+        android:id="@+id/break_explain2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:fontFamily="sans-serif"
+        android:gravity="center"
+        android:layout_above="@+id/edit_text_input2"
+        android:text="Break"
+        android:textAllCaps="true"
+        android:textColor="@color/lighterBlue"
+        android:textSize="40sp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/edit_text_input2"
+        android:layout_width="110dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_above="@+id/text_view_countdown2"
+        android:layout_marginLeft="130dp"
+        android:layout_marginRight="10dp"
+        android:hint="Minutes"
+        android:inputType="number"
+        android:maxLength="4"
+        />
+
+    <Button
+        android:id="@+id/button_set2"
+        android:background="@color/fontColor"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/edit_text_input2"
+        android:layout_toRightOf="@+id/edit_text_input2"
+        android:text="Set"
+        />
+
+    <TextView
+        android:id="@+id/text_view_countdown2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:text="00:00"
+        android:layout_marginBottom="20dp"
+        android:textColor="@android:color/black"
+        android:textSize="60sp"
+        />
+
+    <Button
+        android:id="@+id/button_start_pause2"
+        android:background="@color/fontColor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/text_view_countdown2"
+        android:layout_centerHorizontal="true"
+        android:text="start" />
+
+    <Button
+        android:id="@+id/games_button2"
+        android:background="@color/fontColor"
+        android:layout_width="140dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/button_start_pause2"
+        android:layout_centerHorizontal="true"
+        android:text="Game Options" />
+
+
+    <Button
+        android:id="@+id/button_reset2"
+        android:background="@color/fontColor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/text_view_countdown2"
+        android:layout_marginStart="11dp"
+        android:layout_marginLeft="11dp"
+        android:layout_toRightOf="@+id/button_start_pause2"
+        android:text="RESET"
+        android:visibility="invisible"
+        tools:visibility="invisible"
+
+        />
+
+</RelativeLayout>

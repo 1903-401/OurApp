@@ -5,52 +5,52 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/break_background"
-    tools:context=".GameChoicesActivity">
+    tools:context=".BreakOverActivity">
 
     <ImageView
-        android:id="@+id/gameOwl"
+        android:id="@+id/break_over_assist"
         android:layout_width="140dp"
         android:layout_height="140dp"
         android:src="@mipmap/owl_assistant"
+        android:layout_above="@+id/breakOverEx"
         android:layout_centerHorizontal="true"
-        android:layout_above="@+id/games_one"
-        android:layout_marginBottom="20dp"
         />
 
-    <Button
-        android:id="@+id/games_one"
-        android:layout_width="200dp"
+    <TextView
+        android:id="@+id/breakOverEx"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/games_two"
-        android:layout_marginBottom="20dp"
         android:layout_centerHorizontal="true"
-        android:textAllCaps="true"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="25dp"
         android:textColor="@android:color/black"
-        android:background="@color/light"
-        android:text="Catch The Ball"
-        />
-
-    <Button
-        android:id="@+id/games_two"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp"
         android:layout_centerInParent="true"
-        android:textAllCaps="true"
+        android:textSize="20sp" />
+
+    <Button
+        android:id="@+id/thisToPomo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/breakOverEx"
+        android:layout_marginTop="20dp"
+        android:layout_centerHorizontal="true"
+        android:text="Pomodoro"
         android:textColor="@android:color/black"
-        android:background="@color/light"
-        android:text="Maze"
+        android:background="@color/fontColor"
         />
 
     <Button
-        android:id="@+id/games_three"
-        android:layout_width="200dp"
+        android:id="@+id/thisToTimer"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/games_two"
+        android:layout_below="@id/thisToPomo"
+        android:layout_marginTop="20dp"
         android:layout_centerHorizontal="true"
-        android:textAllCaps="true"
+        android:text="Timer"
         android:textColor="@android:color/black"
-        android:background="@color/light"
-        android:text="Catch the Ball 2"
+        android:background="@color/fontColor"
         />
+
+
 </RelativeLayout>

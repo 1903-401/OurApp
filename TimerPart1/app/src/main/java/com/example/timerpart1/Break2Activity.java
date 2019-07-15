@@ -15,7 +15,7 @@ import android.widget.Toast;
 
 import java.util.Locale;
 
-public class TimerActivity extends AppCompatActivity {
+public class Break2Activity extends AppCompatActivity {
 
     // all the instance variables
 
@@ -24,7 +24,7 @@ public class TimerActivity extends AppCompatActivity {
     private Button mButtonStartPause;
     private Button mButtonReset;
     private Button mButtonSet;
-    private Button transitionButton;
+    private Button mButtonTransition;
 
     private CountDownTimer mCountDownTimer;
     private boolean mTimeRunning;
@@ -43,18 +43,20 @@ public class TimerActivity extends AppCompatActivity {
 
     private long mEndTime;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_timer);
+        setContentView(R.layout.activity_break2);
 
         // initializing all the instance variables
 
-        mEditTextInput = findViewById(R.id.edit_text_input);
-        mTextViewCountdown = findViewById(R.id.text_view_countdown);
-        mButtonStartPause = findViewById(R.id.button_start_pause);
-        mButtonReset = findViewById(R.id.button_reset);
-        mButtonSet = findViewById(R.id.button_set);
+        mEditTextInput = findViewById(R.id.edit_text_input2);
+        mTextViewCountdown = findViewById(R.id.text_view_countdown2);
+        mButtonStartPause = findViewById(R.id.button_start_pause2);
+        mButtonReset = findViewById(R.id.button_reset2);
+        mButtonSet = findViewById(R.id.button_set2);
+        mButtonTransition = findViewById(R.id.games_button2);
 
         // the button for user input on time limit
         mButtonSet.setOnClickListener(new View.OnClickListener() {
@@ -64,7 +66,7 @@ public class TimerActivity extends AppCompatActivity {
 
                 // error for when the user does not put in time (leaves it blank)
                 if (input.length() == 0) {
-                    Toast.makeText(TimerActivity.this, "Field can't be empty", Toast.LENGTH_SHORT);
+                    Toast.makeText(Break2Activity.this, "Field can't be empty", Toast.LENGTH_SHORT);
                     return;
                 }
 
@@ -73,7 +75,7 @@ public class TimerActivity extends AppCompatActivity {
 
                 // error if the user actually puts in 0 as the value
                 if (millisInput == 0) {
-                    Toast.makeText(TimerActivity.this, "Please enter a positive number", Toast.LENGTH_SHORT);
+                    Toast.makeText(Break2Activity.this, "Please enter a positive number", Toast.LENGTH_SHORT);
                     return;
                 }
 
@@ -108,6 +110,14 @@ public class TimerActivity extends AppCompatActivity {
 
         // setting up the transition through the button on timer page
 
+        mButtonTransition.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openGames();
+            }
+        });
+
+
 
     }
 
@@ -138,7 +148,7 @@ public class TimerActivity extends AppCompatActivity {
 
                 // conditions for when the timer is finished
                 mTimeRunning = false;
-                openBreak();
+                openTimer();
                 updateButtons();
 
 
@@ -153,12 +163,15 @@ public class TimerActivity extends AppCompatActivity {
 
     }
 
-    public void openBreak() {
-        Intent intent = new Intent(this, Break2Activity.class);
+    public void openTimer() {
+        Intent intent = new Intent(this, TimerActivity.class);
         startActivity(intent);
     }
 
-
+    public void openGames() {
+        Intent intent = new Intent(this, GameChoicesActivity.class);
+        startActivity(intent);
+    }
 
     // called when someone clicks on start/pause button and the timer is
     // already running

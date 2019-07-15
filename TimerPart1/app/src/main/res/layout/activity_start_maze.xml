@@ -32,6 +32,7 @@
         />
 
     <Button
+        android:id="@+id/startMazeBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
@@ -40,6 +41,18 @@
         android:textColor="#00BCD4"
         android:textSize="14sp"
         android:layout_below="@+id/firstLine"
+        android:layout_centerHorizontal="true"/>
+
+    <Button
+        android:id="@+id/leaveMaze"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Back"
+        android:textColor="#00BCD4"
+        android:onClick="goBack"
+        android:textSize="14sp"
+        android:layout_below="@+id/startMazeBtn"
         android:layout_centerHorizontal="true"/>
 
 

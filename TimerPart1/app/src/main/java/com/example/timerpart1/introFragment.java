@@ -18,7 +18,7 @@ public class introFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_intro, container, false);
 
         TextView ex = view.findViewById(R.id.introEx);
-        ex.setText("Hi, I'm Blink! I will be your personal assistant" +
+        ex.setText("Hi, I'm Blink! I will be your personal assistant." +
                 " Since you are already here, I am sure you understand" +
                 " the importance of time management. I am here to give you motivation," +
                 " remind you of your tasks, and help you through proven scientific methods" +

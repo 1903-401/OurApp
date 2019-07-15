@@ -19,6 +19,10 @@ public class StartMaze extends AppCompatActivity {
 
     }
 
+    public void goBack(){
+        startActivity(new Intent(getApplicationContext(), GameChoicesActivity.class));
+    }
+
     @Override
     public boolean dispatchKeyEvent(KeyEvent event) {
         if (event.getAction() == KeyEvent.ACTION_DOWN) {
