@@ -94,7 +94,6 @@ public class CustomCalendarView extends LinearLayout {
                 final TextView EventTime = addView.findViewById(R.id.eventTime);
                 ImageButton SetTime = addView.findViewById(R.id.setEventTime);
                 Button AddEvent = addView.findViewById(R.id.addEventBtn);
-                Button DeleteEventButton = deleteView.findViewById(R.id.deleteButton);
                 SetTime.setOnClickListener(new OnClickListener() {
                     @Override
                     public void onClick(View view) {
@@ -133,17 +132,6 @@ public class CustomCalendarView extends LinearLayout {
                         alertDialog.dismiss();
                     }
                 });
-
-                DeleteEventButton.setOnClickListener(new OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        DeleteEvent(EventName.getText().toString(), EventTime.getText().toString(),
-                                date, month, year);
-                        SetUpCalendar();
-                        alertDialog.dismiss();
-                    }
-                });
-
 
 
                 builder.setView(addView);
@@ -217,15 +205,6 @@ public class CustomCalendarView extends LinearLayout {
 
     }
 
-    private void DeleteEvent(String event, String time, String date, String month, String year) {
-        Events events = new Events(event,time, date, month, year);
-        dbOpenHelper = new DBOpenHelper(context);
-        SQLiteDatabase database = dbOpenHelper.getWritableDatabase();
-       dbOpenHelper.DeleteEvent(event, time, date, month, year, database);
-        dbOpenHelper.close();
-        eventsList.remove(events);
-        Toast.makeText(context, "Event Deleted", Toast.LENGTH_SHORT).show();
-    }
 
 
     private  void InitializeLayout(){
