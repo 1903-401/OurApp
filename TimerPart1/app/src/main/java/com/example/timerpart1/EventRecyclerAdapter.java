@@ -14,7 +14,12 @@ import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 
+
+// called in the longClick method in CustomCalendarView - sets up the arraylist to view in the
+// recyclerView
+
 public class EventRecyclerAdapter extends RecyclerView.Adapter<EventRecyclerAdapter.MyViewHolder> {
+
 
     Context context;
     ArrayList<Events> arrayList;
@@ -28,11 +33,7 @@ public class EventRecyclerAdapter extends RecyclerView.Adapter<EventRecyclerAdap
 
     }
 
-    public void removeAt(int position) {
-        arrayList.remove(position);
-        notifyItemRemoved(position);
-        notifyItemRangeChanged(position, arrayList.size());
-    }
+
 
     @NonNull
     @Override
@@ -53,6 +54,8 @@ public class EventRecyclerAdapter extends RecyclerView.Adapter<EventRecyclerAdap
 
     }
 
+
+    // sets up a count so that under each date, it says "X events", where X is the number of events
 
     @Override
     public int getItemCount() {

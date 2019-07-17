@@ -40,7 +40,6 @@ public class DBOpenHelper extends SQLiteOpenHelper {
         contentValues.put(DBStructure.YEAR, year);
         database.insert(DBStructure.EVENT_TABLE_NAME, null, contentValues);
 
-
     }
 
 

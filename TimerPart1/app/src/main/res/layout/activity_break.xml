@@ -72,4 +72,17 @@
         android:text="Game Options"
         />
 
+    <Button
+        android:id="@+id/backFromBreak"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/games_transitionButton"
+        android:text="Back"
+        android:textAllCaps="true"
+        android:layout_centerHorizontal="true"
+        android:background="@color/colorTitle"
+        android:layout_marginTop="20dp"
+        android:textColor="@android:color/white"
+        />
+
 </RelativeLayout>

@@ -115,6 +115,9 @@ public class HomeActivity extends AppCompatActivity implements NavigationView.On
             fragment = new todolistFragment();
             fragmentManager.beginTransaction().replace(R.id.fragment_container, fragment).commit();
 
+        } else if (id == R.id.nav_notes) {
+            fragment = new notesFragment();
+            fragmentManager.beginTransaction().replace(R.id.fragment_container, fragment).commit();
         }
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
