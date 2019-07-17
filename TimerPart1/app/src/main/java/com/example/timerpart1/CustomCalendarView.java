@@ -50,8 +50,7 @@ public class CustomCalendarView extends LinearLayout {
     SimpleDateFormat eventDateFormate = new SimpleDateFormat("yyyy-MM-dd", Locale.ENGLISH);
 
     MyGridAdapter myGridAdapter;
-
-
+    Button deleteBtn;
 
     List<Date> dates = new ArrayList<>();
     List<Events> eventsList = new ArrayList<>();
@@ -68,6 +67,8 @@ public class CustomCalendarView extends LinearLayout {
         InitializeLayout();
         SetUpCalendar();
 
+        // going to the previous month
+
         previousButton.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -75,6 +76,8 @@ public class CustomCalendarView extends LinearLayout {
                 SetUpCalendar();
             }
         });
+
+        // going to the next month
 
         nextButton.setOnClickListener(new OnClickListener() {
             @Override
@@ -84,11 +87,18 @@ public class CustomCalendarView extends LinearLayout {
             }
         });
 
+        // when you click on a date, this calls for the AlertDialog pop up that allows
+        // us to enter an event
+
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 AlertDialog.Builder builder = new AlertDialog.Builder(context);
                 builder.setCancelable(true);
+
+                // all the different components of the pop-up to add events - the image button to add
+                // the time, the text box for the event name, the button for adding it to the list
+
                 final View addView = LayoutInflater.from(parent.getContext()).inflate(R.layout.add_newevent_layout, null);
                 final EditText EventName = addView.findViewById(R.id.eventname);
                 final TextView EventTime = addView.findViewById(R.id.eventTime);
@@ -118,11 +128,15 @@ public class CustomCalendarView extends LinearLayout {
                     }
                 });
 
+                // takes in the input
+
                 final String date = eventDateFormate.format(dates.get(position));
                 final String month = monthFormat.format(dates.get(position));
                 final String year = yearFormate.format(dates.get(position));
 
-                // adding and deleting events
+                // adds the event taken from input - calling the saveEvent method in here,
+                // which in turn calls for the method in the DBOpenHelper that adds
+                // the event to the SQL database
 
                 AddEvent.setOnClickListener( new OnClickListener() {
                     @Override
@@ -133,6 +147,7 @@ public class CustomCalendarView extends LinearLayout {
                         alertDialog.dismiss();
                     }
                 });
+
                 builder.setView(addView);
                 alertDialog = builder.create();
                 alertDialog.show();
@@ -145,15 +160,22 @@ public class CustomCalendarView extends LinearLayout {
             }
         });
 
+        // this runs when we long click on the date - shows the list of events for the day
+
         gridView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
 
 
             @Override
             public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
-                String date = eventDateFormate.format(dates.get(position));
+                final String date = eventDateFormate.format(dates.get(position));
+
+                // this is the pop-up with the events
+
                 AlertDialog.Builder builder = new AlertDialog.Builder(context);
                 builder.setCancelable(true);
-                View showView = LayoutInflater.from(parent.getContext()).inflate(R.layout.show_events_layout, null);
+                final View showView = LayoutInflater.from(parent.getContext()).inflate(R.layout.show_events_layout, null);
+
+                // calling the list view - changed it into a separate function
                 RecyclerView recyclerView = showView.findViewById(R.id.EventsRV);
                 RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(showView.getContext());
                 recyclerView.setLayoutManager(layoutManager);
@@ -175,6 +197,13 @@ public class CustomCalendarView extends LinearLayout {
 
 
     }
+
+
+
+
+    // this event is called when we long click on a date and the alertDialog needs to
+    // show a list of all the events for that specific date (gets into the database and
+    // collects all the events by column
 
     private ArrayList<Events> CollectEventsByDate(String date) {
         ArrayList<Events> arrayList = new ArrayList<>();
@@ -199,11 +228,12 @@ public class CustomCalendarView extends LinearLayout {
 
 
 
-
-
     public CustomCalendarView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
     }
+
+    // called when you click on the add button - this takes the event and saves all the details
+    // (event, time, date, month, year) into the database in DBOpenHelper
 
     private void SaveEvent(String event, String time, String date, String month, String year) {
 
@@ -216,8 +246,17 @@ public class CustomCalendarView extends LinearLayout {
     }
 
 
+    // setting up the view (layout)
 
     private  void InitializeLayout(){
+
+        //inflation: Converting the xml layout into java View objects
+
+
+        // process: takes the XML view, create the java object, set values to all its attributes,
+        // and then recursively repeat for all the child nodes ("child nodes" refers to the layers,
+        // like how a TextView could be located in a LinearLayout within a RelativeLayout and so on)
+
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View view = inflater.inflate(R.layout.calendar, this);
         nextButton = view.findViewById(R.id.nextBtn);
@@ -226,6 +265,9 @@ public class CustomCalendarView extends LinearLayout {
         gridView = view.findViewById(R.id.gridView);
 
     }
+
+    // called right from the beginning and also every time a change has been made to the calendar
+    // - main purpose is to set up and then update the calendar
 
     private void SetUpCalendar() {
         String currtdate = dateFormat.format(calendar.getTime());
@@ -247,6 +289,9 @@ public class CustomCalendarView extends LinearLayout {
 
 
     }
+
+
+    // called in the setUpCalendar method - used to update all the events and the database
 
     private void CollectEventsPerMonth(String Month, String year) {
         eventsList.clear();

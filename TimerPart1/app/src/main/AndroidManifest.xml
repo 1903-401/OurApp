@@ -9,7 +9,16 @@
         android:roundIcon="@mipmap/official_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".BreakOverActivity"></activity>
+
+        <activity android:name=".NotesMainActivity1"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity android:name=".EditNoteActivity1"
+            android:parentActivityName=".NotesMainActivity1"
+            />
+        <activity android:name=".NotesTransitionActivity"/>
+
+        <activity android:name=".BreakOverActivity" />
         <activity android:name=".Break2Activity" />
         <activity android:name=".Version2GameActivity" />
         <activity android:name=".StartMaze" />

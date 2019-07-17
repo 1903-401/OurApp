@@ -19,6 +19,7 @@ public class BreakActivity extends AppCompatActivity {
     private TextView countdownText;
     private Button countdownButton;
     private Button transitionButton;
+    private Button backButton;
 
     // setting the timer, giving it a starting point
     private CountDownTimer countDownTimer;
@@ -73,10 +74,24 @@ public class BreakActivity extends AppCompatActivity {
             }
         });
 
+        backButton = (Button) findViewById(R.id.backFromBreak);
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                backToOption();
+            }
+        });
+
+
     }
 
     public void openGames() {
         Intent intent = new Intent(this, GameChoicesActivity.class);
+        startActivity(intent);
+    }
+
+    public void backToOption() {
+        Intent intent = new Intent(this, PomodoroActivity.class);
         startActivity(intent);
     }
 
