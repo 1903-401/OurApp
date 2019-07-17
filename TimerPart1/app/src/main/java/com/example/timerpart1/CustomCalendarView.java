@@ -9,6 +9,7 @@ import android.util.AttributeSet;
 import android.util.EventLog;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.Adapter;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
@@ -37,7 +38,7 @@ public class CustomCalendarView extends LinearLayout {
 
     // initializing all the variables
 
-    ImageButton nextButton, previousButton; // delete    Button
+    ImageButton nextButton, previousButton;
     TextView CurrentDate;
     GridView gridView;
     private static final int MAX_CALENDAR_DAYS = 42;
@@ -89,16 +90,10 @@ public class CustomCalendarView extends LinearLayout {
                 AlertDialog.Builder builder = new AlertDialog.Builder(context);
                 builder.setCancelable(true);
                 final View addView = LayoutInflater.from(parent.getContext()).inflate(R.layout.add_newevent_layout, null);
-                final View deleteView = LayoutInflater.from(parent.getContext()).inflate(R.layout.show_events_rowlayout, null);
                 final EditText EventName = addView.findViewById(R.id.eventname);
                 final TextView EventTime = addView.findViewById(R.id.eventTime);
                 ImageButton SetTime = addView.findViewById(R.id.setEventTime);
                 Button AddEvent = addView.findViewById(R.id.addEventBtn);
-
-
-
-
-                Button DeleteEventButton = deleteView.findViewById(R.id.deleteButton);
 
                 SetTime.setOnClickListener(new OnClickListener() {
                     @Override
@@ -129,7 +124,7 @@ public class CustomCalendarView extends LinearLayout {
 
                 // adding and deleting events
 
-                AddEvent.setOnClickListener(new OnClickListener() {
+                AddEvent.setOnClickListener( new OnClickListener() {
                     @Override
                     public void onClick(View view) {
                         SaveEvent(EventName.getText().toString(), EventTime.getText().toString(),
@@ -138,22 +133,10 @@ public class CustomCalendarView extends LinearLayout {
                         alertDialog.dismiss();
                     }
                 });
-
-                DeleteEventButton.setOnClickListener(new OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        DeleteEvent(EventName.getText().toString(), EventTime.getText().toString(),
-                                date, month, year);
-                        SetUpCalendar();
-                        alertDialog.dismiss();
-                    }
-                });
-
-
-
                 builder.setView(addView);
                 alertDialog = builder.create();
                 alertDialog.show();
+
 
 
 
@@ -163,6 +146,8 @@ public class CustomCalendarView extends LinearLayout {
         });
 
         gridView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+
+
             @Override
             public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
                 String date = eventDateFormate.format(dates.get(position));
@@ -184,7 +169,10 @@ public class CustomCalendarView extends LinearLayout {
 
                 return true;
             }
+
         });
+
+
 
     }
 
@@ -227,15 +215,6 @@ public class CustomCalendarView extends LinearLayout {
 
     }
 
-    private void DeleteEvent(String event, String time, String date, String month, String year) {
-        Events events = new Events(event,time, date, month, year);
-        dbOpenHelper = new DBOpenHelper(context);
-        SQLiteDatabase database = dbOpenHelper.getWritableDatabase();
-       dbOpenHelper.DeleteEvent(event, time, date, month, year, database);
-        dbOpenHelper.close();
-        eventsList.remove(events);
-        Toast.makeText(context, "Event Deleted", Toast.LENGTH_SHORT).show();
-    }
 
 
     private  void InitializeLayout(){
@@ -286,7 +265,6 @@ public class CustomCalendarView extends LinearLayout {
         cursor.close();
         dbOpenHelper.close();
     }
-
 
 
 }

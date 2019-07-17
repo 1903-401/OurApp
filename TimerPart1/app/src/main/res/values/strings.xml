@@ -20,4 +20,9 @@
     <string name="mark_as_completed">Mark as completed</string>
     <string name="reset">Reset</string>
 
+    <string name="whats_on_your_mind">Whats on your mind</string>
+    <string name="share_note">Share Note</string>
+    <string name="delete_notes">Delete Notes</string>
+    <string name="no_notes">No Notes!</string>
+
 </resources>

@@ -9,7 +9,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 public class DBOpenHelper extends SQLiteOpenHelper {
 
     private final static String CREATE_EVENTS_TABLE = "create table " + DBStructure.EVENT_TABLE_NAME
-            + " (" + DBStructure.KEY_ID + " ID INTEGER PRIMARY KEY AUTOINCREMENT, " + DBStructure.EVENT + " TEXT, "
+            + " (ID INTEGER PRIMARY KEY AUTOINCREMENT, " + DBStructure.EVENT + " TEXT, "
             + DBStructure.TIME + " TEXT, " + DBStructure.DATE + " TEXT, " + DBStructure.MONTH
             + " TEXT, " + DBStructure.YEAR + " TEXT )";
 
@@ -40,13 +40,8 @@ public class DBOpenHelper extends SQLiteOpenHelper {
         contentValues.put(DBStructure.YEAR, year);
         database.insert(DBStructure.EVENT_TABLE_NAME, null, contentValues);
 
-
     }
 
-    public void DeleteEvent(String event, String time, String date, String month, String year, SQLiteDatabase database){
-        database.delete(DBStructure.EVENT_TABLE_NAME, "DBStructure.KEY_ID + =?",
-                new String[] {event, date});
-    }
 
 
     public Cursor ReadEvents(String date, SQLiteDatabase database) {
