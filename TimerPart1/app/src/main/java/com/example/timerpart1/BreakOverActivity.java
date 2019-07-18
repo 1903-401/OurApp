@@ -38,6 +38,14 @@ public class BreakOverActivity extends AppCompatActivity {
                 openTwo();
             }
         });
+
+        Button three = findViewById(R.id.thisToHome);
+        three.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openThree();
+            }
+        });
     }
 
     public void openOne(){
@@ -47,6 +55,11 @@ public class BreakOverActivity extends AppCompatActivity {
 
     public void openTwo(){
         Intent intent = new Intent(getApplicationContext(), TimerActivity.class);
+        startActivity(intent);
+    }
+
+    public void openThree(){
+        Intent intent = new Intent(getApplicationContext(), HomeActivity.class);
         startActivity(intent);
     }
 }

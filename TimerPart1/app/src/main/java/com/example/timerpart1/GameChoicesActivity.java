@@ -35,7 +35,7 @@ public class GameChoicesActivity extends AppCompatActivity {
                 startActivity(intent);
                 finish();
             }
-        }, 5000);
+        }, 30000);
 
 
         one = findViewById(R.id.games_one);
